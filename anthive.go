@@ -21,15 +21,15 @@ type Engineer struct {
 }
 
 type Game struct {
-	Queued, Started, Finished int64
-	Author, Flavor, Victory   string
-	Limit                     uint16
-	Bots                      []Bot
-	Map                       Map
+	Queued, Started, Finished  int64
+	ID, Author, Flavor, Status string
+	Limit                      uint16
+	Bots                       []Bot
+	Map                        Map
 }
 
 type Bot struct {
-	repo, sha string
+	ImageName string
 	FC, X, Y  uint8
 	Owner     Engineer
 }
