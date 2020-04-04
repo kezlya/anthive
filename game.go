@@ -21,3 +21,11 @@ type Game struct {
 	Bots                       []Bot
 	Map                        Map
 }
+
+type Sandbox struct {
+	Code   string `json:"code" firestore:"code"`
+	lang   string `json:"lang" firestore:"lang"`
+	Result string `json:"result" firestore:"result"`
+	Status string `json:"status" firestore:"status"`
+	Queued int64  `json:"queued" firestore:"queued"`
+}
