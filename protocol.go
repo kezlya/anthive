@@ -7,6 +7,10 @@ type BotRequest struct {
 	*Canvas `json:"canvas"`
 }
 
+type BotResponse struct {
+	Orders map[uint16]*Order
+}
+
 type Ant struct {
 	Event   string `json:"event"`
 	Errors  int    `json:"errors"`

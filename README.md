@@ -1,2 +1,2 @@
-# anthive
-Objects protocol for AntHive.IO platform
+# AntHive.IO
+Objects and protocols for AntHive.IO platform
