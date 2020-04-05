@@ -14,8 +14,8 @@ type Settings struct {
 }
 
 type Cell struct {
-	Food    int `json:"food,omitempty" firestore:"food"`
-	Hive    int `json:"hive,omitempty" firestore:"hive"`
-	Ant     int `json:"ant,omitempty" firestore:"ant"`
-	Terrain int `json:"terrain,omitempty" firestore:"int"`
+	Food    int    `json:"food,omitempty" firestore:"food"`
+	Terrain string `json:"terrain,omitempty" firestore:"terrain"`
+	Hive    string `json:"hive,omitempty" firestore:"hive"`
+	Ant     string `json:"ant,omitempty" firestore:"ant"`
 }
