@@ -22,3 +22,31 @@ type Canvas struct {
 	Height uint8     `json:"height"`
 	Cells  [][]*Cell `json:"cells"`
 }
+
+type Order struct {
+	Action    string `json:"act"`
+	Direction string `json:"dir"`
+}
+
+const ActionStay = "stay"
+const ActionMove = "move"
+const ActionLoad = "load"
+const ActionUnload = "unload"
+const ActionEat = "eat"
+
+const DirectionUp = "up"
+const DirectionRight = "right"
+const DirectionDown = "down"
+const DirectionLeft = "left"
+
+const EventGood = "good"
+const EventBirth = "birth"
+const EventNoAction = "noaction"
+const EventSlow = "slow"
+const EventBadMove = "badmove"
+const EventBadLoad = "badload"
+const EventBadUnload = "badunload"
+const EventBadEat = "badeat"
+const EventCollision = "collision"
+const EventError = "error"
+const EventDeath = "death"
