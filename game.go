@@ -1,31 +1,24 @@
 package anthive
 
-type Map struct {
-	FirstFrame Frame
-	Settings   MapSettings
-}
-
-type Frame struct {
-}
-
-type MapSettings struct {
-	Width, Height, Food,
-	Hunger, Skin uint8
-	Dark bool
-}
-
 type Game struct {
-	Queued, Started, Finished  int64
-	ID, Author, Flavor, Status string
-	Limit                      uint16
-	Bots                       []Bot
-	Map                        Map
+	ID       string `json:"id" firestore:"id"`
+	Author   string `json:"author" firestore:"author"`
+	Flavor   string `json:"flavor" firestore:"flavor"`
+	Status   string `json:"status" firestore:"status"`
+	Limit    uint16 `json:"limit" firestore:"limit"`
+	Bots     []Bot  `json:"bots" firestore:"bots"`
+	Map      `json:"map" firestore:"map"`
+	Goal     `json:"goal" firestore:"goal"`
+	Queued   int64 `json:"queued" firestore:"queued"`
+	Started  int64 `json:"started" firestore:"started"`
+	Finished int64 `json:"finished" firestore:"finished"`
+	Duration int64 `json:"duration" firestore:"duration"`
 }
 
-type Sandbox struct {
-	Code   string `json:"code" firestore:"code"`
-	lang   string `json:"lang" firestore:"lang"`
-	Result string `json:"result" firestore:"result"`
-	Status string `json:"status" firestore:"status"`
-	Queued int64  `json:"queued" firestore:"queued"`
+type Goal struct {
+	Age       int           `json:"age" firestore:"age"`
+	Ants      int           `json:"ants" firestore:"ants"`
+	Hive      int           `json:"hive" firestore:"hive"`
+	Alone     bool          `json:"alon" firestore:"alon"`
+	Positions []Coordinates `json:"position" firestore:"position"`
 }
