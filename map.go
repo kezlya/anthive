@@ -1,8 +1,8 @@
 package anthive
 
 type Map struct {
-	Init     [][]Cell `json:"init" firestore:"init"`
-	Settings Settings `json:"settings" firestore:"settings"`
+	Init      [][]*Cell `json:"init" firestore:"init"`
+	*Settings `json:"settings" firestore:"settings"`
 }
 
 type Settings struct {

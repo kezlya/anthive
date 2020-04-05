@@ -1,11 +1,11 @@
 package anthive
 
 type Bot struct {
-	Source      string `json:"source" firestore:"source"`
-	Version     string `json:"version" firestore:"version"`
-	Conversion  uint8  `json:"conversion" firestore:"conversion"`
-	Coordinates `json:"coordinates" firestore:"coordinates"`
-	Engineer    `json:"conversion" firestore:"conversion"`
+	Source       string `json:"source" firestore:"source"`
+	Version      string `json:"version" firestore:"version"`
+	Conversion   uint8  `json:"conversion" firestore:"conversion"`
+	*Coordinates `json:"coordinates" firestore:"coordinates"`
+	*Engineer    `json:"conversion" firestore:"conversion"`
 }
 
 type Engineer struct {

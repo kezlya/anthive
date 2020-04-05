@@ -2,9 +2,9 @@ package anthive
 
 type Sandbox struct {
 	Code     string `json:"code" firestore:"code"`
-	Game     `json:"game" firestore:"game"`
+	*Game    `json:"game" firestore:"game"`
 	Lang     string `json:"lang" firestore:"lang"`
-	Results  `json:"results" firestore:"results"`
+	*Results `json:"results" firestore:"results"`
 	Status   string `json:"status" firestore:"status"`
 	Queued   int64  `json:"queued" firestore:"queued"`
 	Duration int64  `json:"duration" firestore:"duration"`
@@ -18,7 +18,7 @@ type Results struct {
 }
 
 type Data struct {
-	Frames [][]CellDiff `json:"frames" firestore:"frames"`
+	Frames [][]*CellDiff `json:"frames" firestore:"frames"`
 }
 
 type CellDiff struct {

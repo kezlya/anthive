@@ -1,10 +1,10 @@
 package anthive
 
 type BotRequest struct {
-	ID     string          `json:"id"`
-	Tick   uint16          `json:"tick"`
-	Ants   map[uint16]*Ant `json:"ants"`
-	Canvas `json:"canvas"`
+	ID      string          `json:"id"`
+	Tick    uint16          `json:"tick"`
+	Ants    map[uint16]*Ant `json:"ants"`
+	*Canvas `json:"canvas"`
 }
 
 type Ant struct {
@@ -18,7 +18,7 @@ type Ant struct {
 }
 
 type Canvas struct {
-	Width  uint8    `json:"width"`
-	Height uint8    `json:"height"`
-	Cells  [][]Cell `json:"cells"`
+	Width  uint8     `json:"width"`
+	Height uint8     `json:"height"`
+	Cells  [][]*Cell `json:"cells"`
 }
