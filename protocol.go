@@ -8,7 +8,8 @@ type BotRequest struct {
 }
 
 type BotResponse struct {
-	Orders map[uint16]*Order
+	Orders       map[uint16]*Order `json:"orders"`
+	Milliseconds int               `json:"milliseconds"`
 }
 
 type Ant struct {
