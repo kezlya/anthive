@@ -1,24 +1,25 @@
 package anthive
 
 type Game struct {
-	ID       string `json:"id" firestore:"id"`
-	Author   string `json:"author" firestore:"author"`
-	Flavor   string `json:"flavor" firestore:"flavor"`
-	Status   string `json:"status" firestore:"status"`
-	Limit    uint16 `json:"limit" firestore:"limit"`
-	Bots     []*Bot `json:"bots" firestore:"bots"`
-	*Map     `json:"map" firestore:"map"`
-	*Goal    `json:"goal" firestore:"goal"`
-	Queued   int64 `json:"queued" firestore:"queued"`
-	Started  int64 `json:"started" firestore:"started"`
-	Finished int64 `json:"finished" firestore:"finished"`
-	Duration int64 `json:"duration" firestore:"duration"`
+	Id       string `json:"id"`
+	Author   string `json:"author"`
+	Flavor   string `json:"flavor"`
+	Version  string `json:"version"`
+	Limit    uint   `json:"limit"`
+	Age      uint   `json:"age"`
+	Bots     []Bot  `json:"bots"`
+	Map      Map    `json:"map"`
+	Goal     Goal   `json:"goal"`
+	Queued   uint   `json:"queued"`
+	Started  uint   `json:"started"`
+	Finished uint   `json:"finished"`
+	Duration uint   `json:"duration"`
 }
 
 type Goal struct {
-	Age       int            `json:"age" firestore:"age"`
-	Ants      int            `json:"ants" firestore:"ants"`
-	Hive      int            `json:"hive" firestore:"hive"`
-	Alone     bool           `json:"alon" firestore:"alon"`
-	Positions []*Coordinates `json:"position" firestore:"position"`
+	Age    uint    `json:"age"`
+	Ants   uint    `json:"ants"`
+	Hive   uint    `json:"hive"`
+	Alone  bool    `json:"alone"`
+	Points []Point `json:"points"`
 }

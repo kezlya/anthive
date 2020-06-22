@@ -1,21 +1,26 @@
 package anthive
 
 type Map struct {
-	Init      [][]*Cell `json:"init" firestore:"init"`
-	*Settings `json:"settings" firestore:"settings"`
+	Canvas Canvas `json:"canvas"`
+	Food   uint   `json:"food"`
+	Hunger uint   `json:"hunger"`
+	Theme  uint   `json:"theme"`
 }
 
-type Settings struct {
-	Width  uint8 `json:"width" firestore:"width"`
-	Height uint8 `json:"height" firestore:"height"`
-	Food   uint8 `json:"food" firestore:"food"`
-	Hunger uint8 `json:"hunger" firestore:"hunger"`
-	Theme  uint8 `json:"theme" firestore:"theme"`
+type Canvas struct {
+	Width  uint     `json:"width"`
+	Height uint     `json:"height"`
+	Cells  [][]Cell `json:"cells"`
 }
 
 type Cell struct {
-	Food    int    `json:"food,omitempty" firestore:"food"`
-	Terrain string `json:"terrain,omitempty" firestore:"terrain"`
-	Hive    string `json:"hive,omitempty" firestore:"hive"`
-	Ant     string `json:"ant,omitempty" firestore:"ant"`
+	Food    uint   `json:"food,omitempty"`
+	Terrain string `json:"terrain,omitempty"`
+	Hive    string `json:"hive,omitempty"`
+	Ant     string `json:"ant,omitempty"`
+}
+
+type Point struct {
+	X uint `json:"x"`
+	Y uint `json:"y"`
 }

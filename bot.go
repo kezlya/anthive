@@ -1,21 +1,22 @@
 package anthive
 
 type Bot struct {
-	Source       string `json:"source" firestore:"source"`
-	Version      string `json:"version" firestore:"version"`
-	Skin         uint8  `json:"skin" firestore:"skin"`
-	Conversion   uint8  `json:"conversion" firestore:"conversion"`
-	*Coordinates `json:"coordinates" firestore:"coordinates"`
-	*Engineer    `json:"conversion" firestore:"conversion"`
+	Lang       string `json:"lang"`
+	Source     string `json:"source"`
+	Version    string `json:"version"`
+	Skin       uint   `json:"skin"`
+	Conversion uint   `json:"conversion"`
+	Span       Point  `json:"Point"`
+	Username   string `json:"username"`
+	Wealth     string `json:"wealth"`
+	Stats      Stats  `json:"stats"`
+	Avatar     string `json:"avatar"`
 }
 
-type Engineer struct {
-	Score    uint16 `json:"score" firestore:"score"`
-	Username string `json:"username" firestore:"username"`
-	Avatar   string `json:"avatar" firestore:"avatar"`
-}
-
-type Coordinates struct {
-	X uint8 `json:"x" firestore:"x"`
-	Y uint8 `json:"y" firestore:"y"`
+type Stats struct {
+	Age    uint `json:"age"`
+	Art    uint `json:"art"`
+	Ants   uint `json:"ants"`
+	Hive   uint `json:"hive"`
+	Errors uint `json:"errors"`
 }
