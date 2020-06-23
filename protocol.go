@@ -14,7 +14,7 @@ type Response struct {
 type Ant struct {
 	Id      uint   `json:"id"`
 	Event   string `json:"event"`
-	Errors  int    `json:"errors"`
+	Errors  uint   `json:"errors"`
 	Age     uint   `json:"age"`
 	Health  uint   `json:"health"`
 	Payload uint   `json:"payload"`
@@ -22,7 +22,7 @@ type Ant struct {
 }
 
 type Order struct {
-	AntId     string `json:"antId"`
+	AntId     uint   `json:"antId"`
 	Action    string `json:"act"`
 	Direction string `json:"dir"`
 }
