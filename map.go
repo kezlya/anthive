@@ -2,25 +2,25 @@ package anthive
 
 type Map struct {
 	Canvas Canvas `json:"canvas"`
-	Food   uint   `json:"food"`
-	Hunger uint   `json:"hunger"`
-	Theme  uint   `json:"theme"`
+	Food   uint32 `json:"food"`
+	Hunger uint32 `json:"hunger"`
+	Theme  uint32 `json:"theme"`
 }
 
 type Canvas struct {
-	Width  uint     `json:"width"`
-	Height uint     `json:"height"`
+	Width  uint32   `json:"width"`
+	Height uint32   `json:"height"`
 	Cells  [][]Cell `json:"cells"`
 }
 
 type Cell struct {
-	Food    uint   `json:"food,omitempty"`
+	Food    uint32 `json:"food,omitempty"`
 	Terrain string `json:"terrain,omitempty"`
 	Hive    string `json:"hive,omitempty"`
 	Ant     string `json:"ant,omitempty"`
 }
 
 type Point struct {
-	X uint `json:"x"`
-	Y uint `json:"y"`
+	X uint32 `json:"x"`
+	Y uint32 `json:"y"`
 }

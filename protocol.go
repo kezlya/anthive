@@ -2,7 +2,7 @@ package anthive
 
 type Request struct {
 	Id     string `json:"id"`
-	Tick   uint   `json:"tick"`
+	Tick   uint32 `json:"tick"`
 	Ants   []Ant  `json:"ants"`
 	Canvas Canvas `json:"canvas"`
 }
@@ -12,17 +12,17 @@ type Response struct {
 }
 
 type Ant struct {
-	Id      uint   `json:"id"`
+	Id      uint32 `json:"id"`
 	Event   string `json:"event"`
-	Errors  uint   `json:"errors"`
-	Age     uint   `json:"age"`
-	Health  uint   `json:"health"`
-	Payload uint   `json:"payload"`
+	Errors  uint32 `json:"errors"`
+	Age     uint32 `json:"age"`
+	Health  uint32 `json:"health"`
+	Payload uint32 `json:"payload"`
 	Point   Point  `json:"point"`
 }
 
 type Order struct {
-	AntId     uint   `json:"antId"`
+	AntId     uint32 `json:"antId"`
 	Action    string `json:"act"`
 	Direction string `json:"dir"`
 }
