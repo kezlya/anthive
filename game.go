@@ -5,21 +5,32 @@ type Game struct {
 	Author   string `json:"author"`
 	Flavor   string `json:"flavor"`
 	Version  string `json:"version"`
-	Limit    uint32 `json:"limit"`
-	Age      uint32 `json:"age"`
+	Limit    int    `json:"limit"`
+	Age      int    `json:"age"`
 	Bots     []Bot  `json:"bots"`
 	Map      Map    `json:"map"`
 	Goal     Goal   `json:"goal"`
-	Queued   uint32 `json:"queued"`
-	Started  uint32 `json:"started"`
-	Finished uint32 `json:"finished"`
-	Duration uint32 `json:"duration"`
+	Started  int    `json:"started"`
+	Finished int    `json:"finished"`
 }
 
+type GameFirebase struct {
+	Game       string `json:"game"`
+	FirstFrame string `json:"firstFrame"`
+}
+
+type GameVideo struct {
+}
+
+type GameIndex struct {
+}
+
+// 	Queued   int `json:"queued"` Firebase and index
+
 type Goal struct {
-	Age    uint32  `json:"age"`
-	Ants   uint32  `json:"ants"`
-	Hive   uint32  `json:"hive"`
+	Age    int     `json:"age"`
+	Ants   int     `json:"ants"`
+	Hive   int     `json:"hive"`
 	Alone  bool    `json:"alone"`
 	Points []Point `json:"points"`
 }

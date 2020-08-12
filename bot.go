@@ -1,22 +1,22 @@
 package anthive
 
 type Bot struct {
-	Lang       string `json:"lang"`
-	Source     string `json:"source"`
+	Lang string `json:"lang"`
+	//Source     string `json:"source"`
 	Version    string `json:"version"`
-	Skin       uint32 `json:"skin"`
-	Conversion uint32 `json:"conversion"`
-	Span       Point  `json:"Point"`
+	Skin       int    `json:"skin"`
+	Conversion int    `json:"conversion"`
+	Spawn      Point  `json:"spawn"`
 	Username   string `json:"username"`
-	Wealth     string `json:"wealth"`
 	Stats      Stats  `json:"stats"`
 	Avatar     string `json:"avatar"`
 }
 
 type Stats struct {
-	Age    uint32 `json:"age"`
-	Art    uint32 `json:"art"`
-	Ants   uint32 `json:"ants"`
-	Hive   uint32 `json:"hive"`
-	Errors uint32 `json:"errors"`
+	Score  string `json:"score"`
+	Age    int    `json:"age"`
+	Art    int    `json:"art"`
+	Ants   int    `json:"ants"`
+	Hive   int    `json:"hive"`
+	Errors int    `json:"errors"`
 }
