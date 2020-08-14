@@ -1,7 +1,7 @@
 package anthive
 
 type Map struct {
-	Init   string `json:"string"` //???
+	Init   string `json:"firstFrame"`
 	Food   int    `json:"food"`
 	Hunger int    `json:"hunger"`
 	Theme  int    `json:"theme"`
